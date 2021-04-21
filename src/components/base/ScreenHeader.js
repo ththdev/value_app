@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/native";
 
-export default function Header({ headerTitle, headerLeft, headerRight }) {
+export default function ScreenHeader({ headerTitle, headerLeft, headerRight }) {
   return (
     <Container>
       {headerLeft}

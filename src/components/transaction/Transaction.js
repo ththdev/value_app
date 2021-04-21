@@ -11,7 +11,7 @@ export default function Transaction({ data }) {
 
   return (
     <TouchableWithoutFeedback
-      onPress={() => navigation.push("DetailTransaction", { title })}
+      onPress={() => navigation.push("DetailTransaction", { data })}
     >
       <Container>
         <RowWrapper>
