@@ -8,6 +8,6 @@ export default function TransactionImage() {
 const Image = styled.Image`
   width: 35px;
   height: 35px;
-  border-radius: 50%;
+  border-radius: 50px;
   background-color: #c4c4c4;
 `;

@@ -15,7 +15,7 @@ const Container = styled.View`
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 20px;
+  padding-top: 60px;
   padding-bottom: 10px;
   flex-direction: row;
   justify-content: space-between;

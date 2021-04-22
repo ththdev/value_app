@@ -22,4 +22,6 @@ const Wrapper = styled.View`
   align-items: center;
 `;
 
-const Text = styled.Text``;
+const Text = styled.Text`
+  font-size: 18px;
+`;

@@ -2,30 +2,34 @@ import React from "react";
 import styled from "styled-components/native";
 import BackButton from "../../components/base/BackButton";
 import ScreenHeader from "../../components/base/ScreenHeader";
+import DatePicker from "../../components/picker/DatePicker";
 
 export default function DetailTransactionScreen({ route, navigation }) {
   const { data } = route.params;
-  const { title, amount, category, photoUrl, memo } = data;
+  const { title, amount, date, category, photoUrl, memo } = data;
 
   return (
     <Container>
       <ScreenHeader headerLeft={<BackButton />} />
       <Header>
-        <Image src={photoUrl} />
+        <Image source={{ uri: photoUrl }} />
         <RowWrapper>
           <Title>{title}</Title>
-          <Title>$ {amount}</Title>
+          <Title>-$ {amount}</Title>
         </RowWrapper>
       </Header>
       <DetailList>
         <DetailWrapper>
           <Text>Type</Text>
+          <OptionText>Spend</OptionText>
         </DetailWrapper>
         <DetailWrapper>
           <Text>Category</Text>
+          <OptionText>{category}</OptionText>
         </DetailWrapper>
         <DetailWrapper>
           <Text>Date</Text>
+          <DatePicker currentDate={date} />
         </DetailWrapper>
         <DetailWrapper>
           <Text>Source</Text>
@@ -39,7 +43,6 @@ export default function DetailTransactionScreen({ route, navigation }) {
 }
 
 const Container = styled.View`
-  flex: 1;
   background-color: #fff;
 `;
 
@@ -54,9 +57,9 @@ const Header = styled.View`
 `;
 
 const Image = styled.Image`
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
   background-color: #c4c4c4;
   margin-bottom: 15px;
 `;
@@ -69,6 +72,11 @@ const Title = styled.Text`
 const Text = styled.Text`
   font-size: 18px;
   font-weight: bold;
+`;
+
+const OptionText = styled.Text`
+  font-size: 18px;
+  color: #828282;
 `;
 
 const RowWrapper = styled.View`
@@ -86,5 +94,5 @@ const DetailWrapper = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `;
